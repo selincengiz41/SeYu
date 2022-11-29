@@ -99,7 +99,6 @@ C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Seyu.TagHelpers.output.cache
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Seyu.RazorCoreGenerate.cache
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -110,7 +109,18 @@ C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Seyu.RazorTargetAssemblyInfo.
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Seyu.Views.pdb
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Seyu.csproj.CopyComplete
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Seyu.dll
-C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\refint\Seyu.dll
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Seyu.pdb
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Seyu.genruntimeconfig.cache
 C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\ref\Seyu.dll
+C:\Users\LENOVO\Desktop\Seyu\Seyu\bin\Debug\net5.0\System.Web.Mvc.dll
+C:\Users\LENOVO\Desktop\Seyu\Seyu\bin\Debug\net5.0\System.Web.Razor.dll
+C:\Users\LENOVO\Desktop\Seyu\Seyu\bin\Debug\net5.0\System.Web.Helpers.dll
+C:\Users\LENOVO\Desktop\Seyu\Seyu\bin\Debug\net5.0\System.Web.WebPages.Deployment.dll
+C:\Users\LENOVO\Desktop\Seyu\Seyu\bin\Debug\net5.0\System.Web.WebPages.Razor.dll
+C:\Users\LENOVO\Desktop\Seyu\Seyu\bin\Debug\net5.0\System.Web.WebPages.dll
+C:\Users\LENOVO\Desktop\Seyu\Seyu\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll
+C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\refint\Seyu.dll
+C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Razor\Views\Detail\Index.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Razor\Views\Admin\Edit.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Razor\Views\Admin\Add.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Seyu\Seyu\obj\Debug\net5.0\Razor\Views\Admin\Update.cshtml.g.cs

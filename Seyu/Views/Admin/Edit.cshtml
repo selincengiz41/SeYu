@@ -1,0 +1,183 @@
+﻿@model List<Laptop>
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post))
+{
+
+
+
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - SeYu</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <style>
+            .flexbox-container {
+                display: flex;
+                /*align-items:center;*/
+                align-items: stretch;
+            }
+
+            .box-1 {
+                width: 280px;
+            }
+
+            .box-2 {
+                width: max-content;
+                flex-grow: 1;
+            }
+        </style>
+
+
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href='@Url.Action("Index", "Home")'>Seyu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form method="post" class="d-flex position-absolute top-50 start-50 translate-middle" role="search">
+                        <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit" name="submitButton" value="Search">Search</button>
+                    </form>
+                  
+                </div>
+            </div>
+        </nav>
+        <div class="flexbox-container">
+            <div class="flexbox-item box-1 d-flex flex-column flex-shrink-0 p-3 bg-light">
+                <form method="post">
+                    <ul class="nav nav-pills flex-column mb-auto">
+                     
+                        <hr>
+                        <li class="text-center">
+
+                           
+                            <a class="btn btn active"  href='@Url.Action("Add", "Admin")'>Add Computer</a>
+                        </li>
+                        <br />
+                        <li class="text-center">
+                            <!-- web scrabing butonu burda-->
+                            <button class="btn btn active" type="submit" name="submitButton" value="WebScraping">Web Scrabing</button>
+                           
+                        </li>
+
+                    </ul>
+                </form>
+            </div>
+            <div class="flexbox-item box-2" style="width:1500px;">
+                <ul class="nav nav-pills flex-column mb-auto">
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+
+
+                                        <img src="@item.Resim" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h2>@item.Marka</h2>
+                                            <a class="card-title" href='@Url.Action("Index", "Detail", new { baslik = item.Baslik })'>@item.Baslik </a>
+                                            <!-- CSS only   <a class="card-title" asp-area="" asp-controller="Detail" asp-action="Index">@item.Baslik</a>-->
+                                            <p class="card-text" style="color:limegreen" :">@item.Fiyat TL</p>
+
+                                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                                <div class="btn-group me-2" role="group" aria-label="First group">
+                                                    @{
+                                                        if (item.Url.Contains("trendyol"))
+                                                        {
+                                                            <a type="button" href="@item.Url" class="btn active" style="color:orange">Trendyol</a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a type="button" href="#" class="btn active" style="color:orange">Trendyol</a>
+                                                        }
+                                                    }
+
+                                                   
+
+                                                </div>
+                                                <div class="btn-group me-2" role="group" aria-label="Second group">
+                                                    @{
+                                                        if (item.Url.Contains("n11"))
+                                                        {
+                                                            <a type="button" href="@item.Url" class="btn active" style="color:red">n11</a>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <a type="button" href="#" class="btn active" style="color:red">n11</a>
+
+                                                        }
+                                                    }
+
+                                                </div>
+                                                <div class="btn-group" role="group" aria-label="Third group">
+                                                    @{
+                                                        if (item.Url.Contains("vatan"))
+                                                        {
+                                                            <a type="button" href="@item.Url" class="btn active" style="color:blue">Vatan</a>
+
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <a type="button" href="#" class="btn active" style="color:blue">Vatan</a>
+
+                                                        }
+                                                    }
+                                                </div>
+                                                <div class="btn-group" role="group" aria-label="Fourth group">
+                                                    @{
+                                                        if (item.Url.Contains("mediamarkt"))
+                                                        {
+                                                            <a type="button" href="@item.Url" class="btn active" style="color:deeppink">Media Markt</a>
+
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <a type="button" href="#" class="btn active" style="color: deeppink">Media Markt</a>
+
+                                                        }
+                                                    }
+
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <br>
+                                            <div class="btn-toolbar" role="toolbar">
+                                                <div class="btn-group me-2" role="group" aria-label="First group">
+
+                                                    <a  class="btn active" style="color:darkred" href='@Url.Action("Sil", "Admin", new { baslik = item.Baslik })'>Sil</a>
+                                                   
+
+                                                </div>
+                                                <div class="btn-group me-2" role="group">
+                                                    <a class="btn active" style="color:green" href='@Url.Action("Update", "Admin", new { id = item.Id , bos="" })'>Güncelle</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+
+
+            </div>
+        </div>
+    </body>
+
+    </html>
+
+
+}

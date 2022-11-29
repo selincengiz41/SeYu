@@ -1,0 +1,94 @@
+﻿@model Laptop
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+
+        .image {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .container-2 {
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Seyu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Çok Satan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">En Düşük Fiyat</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#">En yüksek Fiyat </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">En Yüksek Puan</a>
+                    </li>
+                </ul>
+                <form class="d-flex position-absolute top-50 start-50 translate-middle" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <a class="nav-link " asp-controller="Admin" asp-action="Index">Admin</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="box2">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class=" col-md-6">
+                        <img src=@Model.Resim class="image   rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title">@Model.Marka || @Model.Baslik</h4>
+                            <h5>@Model.Fiyat TL</h5>
+                            <div class="container-2">
+                                <div class="box-1">
+                                    <div class="card" style="width: 25rem;">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">İslemci Markası : @Model.islemciMarkası </li>
+                                            <li class="list-group-item">İslemci Nesli : @Model.islemciNesli</li>
+                                            <li class="list-group-item">İslemci Teknolojisi : @Model.islemciTeknolojisi</li>
+                                            <li class="list-group-item">Ram : @Model.ram</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="box-2">
+                                    <div class="card" style="width: 25rem;">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Ekran Boyutu : @Model.ekranBoyutu</li>
+                                            <li class="list-group-item">Ekran Kartı : @Model.ekranKartı</li>
+                                            <li class="list-group-item">Disk Kapasitesi : @Model.diskKapasitesi</li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+</html>

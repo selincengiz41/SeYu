@@ -1,0 +1,87 @@
+﻿@using (Html.BeginForm("Add", "Admin", FormMethod.Post))
+{
+<html lang="en">
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+<body>
+    <div>
+        <!-- Left section of signup form -->
+        <dive>
+            <h1 class="text-center">Add Laptop</h1>
+            <br />
+            <form class="text-center" cl action="" method="post">
+                <div class="mb-4">
+                    <p>
+                        <label for="Marka" class="form-label">Marka</label>
+                            <input type="text" class="form-control" name="marka" id="Marka">
+                </div>
+                <div>
+                    <p>
+                        <label for="Model" class="form-label">Model</label>
+                            <input type="text" class="form-control" name="model" id="Model">
+                </div>
+                <div>
+                    <p>
+                        <label for="Fiyat" class="form-label">Fiyat</label>
+                            <input type="text" class="form-control" name="fiyat" id="username">
+                </div>
+                <div>
+                    <p>
+                        <label for="Baslik" class="form-label">Baslik</label>
+                            <input type="text" class="form-control" name="baslik" id="Baslik">
+                </div>
+                <div>
+                    <p>
+                        <label for="Url" class="form-label"> URL </label>
+                            <input type="text" class="form-control" name="url" id="Url">
+                </div>
+                <div>
+                    <p>
+                        <label for="IslemciMarkasi" class="form-label">İşlemci Markasi</label>
+                        <input type="text" class="form-control" name="islemciMarkasi" id="IMArka">
+                </div>
+                <div>
+                    <p>
+                        <label for="IslemciNesli" class="form-label">İşlemci Nesli</label>
+                            <input type="text" class="form-control" name="islemciNesli" id="INesil">
+                </div>
+                <div>
+                    <p>
+                        <label for="IslemciTeknolojisi" class="form-label">İşlemci Teknolojisi</label>
+                        <input type="text" class="form-control" name="islemciTeknolojisi" id="Iteknoloji">
+                </div>
+                <div>
+                    <p>
+                        <label for="Ram" class="form-label">Ram</label>
+                            <input type="text" class="form-control" name="ram"  id="Ram">
+                </div>
+                <div>
+                    <p>
+                        <label for="EkranBoyutu" class="form-label">Ekran Boyutu</label>
+                            <input type="text" class="form-control" name="ekranBoyutu" id="Eboyutu">
+                </div>
+                <div>
+                    <p>
+                        <label for="EkranKartı" class="form-label">Ekran Kartı</label>
+                            <input type="text" class="form-control" name="ekranKartı" id="Ekartı">
+                </div>
+                <div>
+                    <p>
+                        <label for="Disk" class="form-label">Disk Kapasitesi</label>
+                            <input type="text" class="form-control" name="diskKapasitesi" id="Disk">
+                </div>
+                  
+                    <button class="btn btn active" href='@Url.Action("Add", "Admin", new { k = "" })' data-form-method="post">    Add </button>
+
+            </form>
+
+    </div>
+
+
+
+</body>
+</html>
+}

@@ -3,8 +3,12 @@
     "",
     "\\Seyu",
     "\\Seyu\\Controllers",
+    "\\Seyu\\Models",
     "\\Seyu\\Views",
-    "\\Seyu\\Views\\Home"
+    "\\Seyu\\Views\\Admin",
+    "\\Seyu\\Views\\Detail",
+    "\\Seyu\\Views\\Home",
+    "\\Seyu\\Views\\Shared"
   ],
   "SelectedNode": "\\Seyu.sln",
   "PreviewInSolutionExplorer": false

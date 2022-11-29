@@ -1,0 +1,92 @@
+﻿@model Laptop
+@using (Html.BeginForm("Update", "Admin", FormMethod.Post))
+{
+    <html lang="en">
+    <head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div>
+            <!-- Left section of signup form -->
+            <dive>
+                <h1 class="text-center">Update Laptop</h1>
+                <br />
+                <form class="text-center" cl action="" method="post">
+                    <div class="mb-4">
+                        <p>
+                            <label for="Marka" class="form-label">Marka</label>
+                            <input type="text" class="form-control" name="marka" id="Marka" value=@Model.Marka>
+                    </div>
+                    <div >
+                        <p>
+                            <label for="ID" class="form-label">ID</label>
+                            <input type="text" class="form-control" name="id" id="id" value=@Model.Id disabled readonly>
+                    </div>
+                    <div>
+                        <p>
+                            <label for="Model" class="form-label">Model</label>
+                            <input type="text" class="form-control" name="model" id="Model" >
+                    </div>
+                    <div>
+                        <p>
+                            <label for="Fiyat" class="form-label">Fiyat</label>
+                            <input type="text" class="form-control" name="fiyat" id="username" value=@Model.Fiyat>
+                    </div>
+                    <div>
+                        <p>
+                            <label for="Baslik" class="form-label">Baslik</label>
+                            <input type="text" class="form-control" name="baslik" id="Baslik" value=@Model.Baslik>
+                    </div>
+                    <div>
+                        <p>
+                            <label for="Url" class="form-label"> URL </label>
+                            <input type="text" class="form-control" name="url" id="Url" value=@Model.Url>
+                    </div>
+                    <div>
+                        <p>
+                            <label for="IslemciMarkasi" class="form-label">İşlemci Markasi</label>
+                            <input type="text" class="form-control" name="islemciMarkasi" id="IMArka" value=@Model.islemciMarkası>
+                    </div>
+                    <div>
+                        <p>
+                            <label for="IslemciNesli" class="form-label">İşlemci Nesli</label>
+                            <input type="text" class="form-control" name="islemciNesli" id="INesil" value=@Model.islemciNesli>
+                    </div>
+                    <div>
+                        <p>
+                            <label for="IslemciTeknolojisi" class="form-label">İşlemci Teknolojisi</label>
+                            <input type="text" class="form-control" name="islemciTeknolojisi" id="Iteknoloji" value=@Model.islemciTeknolojisi>
+                    </div>
+                    <div>
+                        <p>
+                            <label for="Ram" class="form-label">Ram</label>
+                            <input type="text" class="form-control" name="ram" id="Ram" value=@Model.ram>
+                    </div>
+                    <div>
+                        <p>
+                            <label for="EkranBoyutu" class="form-label">Ekran Boyutu</label>
+                            <input type="text" class="form-control" name="ekranBoyutu" id="Eboyutu" value=@Model.ekranBoyutu>
+                    </div>
+                    <div>
+                        <p>
+                            <label for="EkranKartı" class="form-label">Ekran Kartı</label>
+                            <input type="text" class="form-control" name="ekranKartı" id="Ekartı" value=@Model.ekranKartı>
+                    </div>
+                    <div>
+                        <p>
+                            <label for="Disk" class="form-label">Disk Kapasitesi</label>
+                            <input type="text" class="form-control" name="diskKapasitesi" id="Disk" value=@Model.diskKapasitesi>
+                    </div>
+                    <button class="btn btn active" href='@Url.Action("Update", "Admin", new { buton = "" })' data-form-method="post">    Update </button>
+                   
+                </form>
+
+        </div>
+
+
+
+    </body>
+    </html>
+}

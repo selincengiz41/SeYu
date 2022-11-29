@@ -16,13 +16,12 @@ namespace Seyu.Models
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string Id { get; set; }
         public string Marka { get; set; }
-            public string Fiyat { get; set; }
-            public string Resim { get; set; }
-            public string Baslik { get; set; }
-            public string Url { get; set; }
-            public string Derece { get; set; }
-
-
+        [BsonRepresentation(MongoDB.Bson.BsonType.Double)]
+        public double Fiyat { get; set; }
+        public string Resim { get; set; }
+        public string Baslik { get; set; }
+        public string Url { get; set; }
+        public string Derece { get; set; }
         public string islemciMarkası { get; set; }
         public string islemciNesli { get; set; }
         public string islemciTeknolojisi { get; set; }

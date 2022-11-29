@@ -1,145 +1,394 @@
 ﻿@model List<Laptop>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SeYu</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <style>
-        .flexbox-container {
-            display: flex;
-            /*align-items:center;*/
-            align-items:stretch;
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - SeYu</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <style>
+            .flexbox-container {
+                display: flex;
+                /*align-items:center;*/
+                align-items: stretch;
+            }
 
-           
-        }
-        .box-1{
-            width:280px;
-        }
-        .box-2{
-            width:max-content;
-            flex-grow:1;
-        }
-        
-    </style>
-    
-   
-    
-</head>
-<body>
+            .box-1 {
+                width: 280px;
+            }
 
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Seyu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Çok Satan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">En Düşük Fiyat</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link " href="#">En yüksek Fiyat </a>
+            .box-2 {
+                width: max-content;
+                flex-grow: 1;
+            }
+        </style>
 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">En Yüksek Puan</a>
-                    </li>
-                </ul>
-                <form class="d-flex position-absolute top-50 start-50 translate-middle" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <a class="nav-link " href="#">Admin</a>
+
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Seyu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form method="post" >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                       
+                        <li class="nav-item">
+                                <button class="btn btn-light" type="submit" name="submitButton" value="EnDusukFiyat">En Düşük Fiyat</button>
+                          
+                        </li>
+                        <li class="nav-item ">
+                                <button class="btn btn-light" type="submit" name="submitButton" value="EnYuksekFiyat">En yüksek Fiyat</button>
+                         
+                        </li>
+                        <li class="nav-item">
+                                <a class="btn btn-light " href="#">En Yüksek Puan</a>
+                        </li>
+                    </ul>
+                    </form>
+                    <form method="post" class="d-flex position-absolute top-50 start-50 translate-middle" role="search">
+                        <input class="form-control me-2"  name="search" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit" name="submitButton" value="Search">Search</button>
+                    </form>
+                    <a class="nav-link position-absolute top-5 end-0" asp-controller="Admin" asp-action="Index">Admin</a>
+                  
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div class="flexbox-container">
-        <div class="flexbox-item box-1 d-flex flex-column flex-shrink-0 p-3 bg-light" >
-            <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item text-center">
-                    <input class="form-check-input" type="checkbox" value="Asus" name="Asus">
-                    <label class="form-check-label " for="flexCheckDefault">
-                        Asus
-                    </label>
-                </li>
-                <br />
-                <li class="nav-item text-center">
-                    <input class="form-check-input" type="checkbox" value="Lenovo" name="Lenovo">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Lenovo
-                    </label>
-                </li>
-                <br />
-                <li class="nav-item text-center">
-                    <input class="form-check-input" type="checkbox" value="Monster" name="Monster">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Monster
-                    </label>
-                </li>
-                <br />
-                <li class="nav-item text-center">
-                    <input class="form-check-input" type="checkbox" value="Msi" name="Msi">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Msi
-                    </label>
-                </li>
-                <br />
-                <li class="nav-item text-center">
-                    <input class="form-check-input" type="checkbox" value="Apple" name="Apple">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Apple
-                    </label>
-                </li>
-                <br />
-                <li class="nav-item text-center">
-                    <input class="form-check-input" type="checkbox" value="Hp" name="Hp">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Hp
-                    </label>
-                    </li >
+        <div class="flexbox-container">
+            <div class="flexbox-item box-1 d-flex flex-column flex-shrink-0 p-3 bg-light">
+                  <form method="post" >
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <h5 class="text-center">Marka</h5>
+                    <hr>
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="ASUS" name="Asus">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Asus
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="LENOVO" name="Lenovo">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Lenovo
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="Monster" name="Monster">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Monster
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="Dell" name="Msi">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Dell
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="Apple" name="Apple">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Apple
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="HP" name="Hp">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Hp
+                        </label>
+                    </li>
                     <br />
-                <li class="text-center">
-                    <input class="btn btn-outline-success " type="submit">
-                    
-                </li>
-                 
-            </ul>
-        </div>
-        <div class="flexbox-item box-2" style="width:1500px;">
-            <ul class="nav nav-pills flex-column mb-auto">
-                @foreach (var item in Model)
-                {
-                    <li>
-                        <div class="card mb-3" >
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="@item.Resim" class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h2>@item.Marka</h2>
-                                        <a class="card-title" href="@item.Url">@item.Baslik</a>
-                                        <p class="card-text" style="color:orange":">@item.Fiyat TL</p>
-                                       
+                    <h5 class="text-center">Fiyat</h5>
+                    <hr>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="0-5000" name="Price1">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            0-5.000 TL
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="5000-10000" name="Price2">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            5.000-10.000 TL
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="10000-20000" name="Price3">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            10.000-20.000 TL
+                        </label>
+                    </li>
+                    <br />
+                    <h5 class="text-center">Ram</h5>
+                    <hr>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="4 GB" name="Ram4">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            4 GB
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="8 GB" name="Ram8">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            8 GB
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="16 GB" name="Ram16">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            16 GB
+                        </label>
+                    </li>
+                    <br />
+                    <h5 class="text-center">İşlemci Markası</h5>
+                    <hr>
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="Amd" name="Amd">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            AMD
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="Intel" name="Intel">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Intel
+                        </label>
+                    </li>
+                    <br />
+                    <h5 class="text-center">İşlemci Teknolojisi</h5>
+                    <hr>
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="Ryzen 3" name="Amd3">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Ryzen 3
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="Ryzen 5" name="Amd5">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Ryzen 5
+                        </label>
+                    </li>
+
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="Ryzen 7" name="Amd7">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Ryzen 7
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="Celeron" name="IntelC">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Celeron
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="Core i3" name="Intel3">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Core i3
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="Core i5" name="Intel5">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Core i5
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="Core i7" name="Intel7">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Core i7
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="Core i9" name="Intel9">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Core i9
+                        </label>
+                    </li>
+                        <br />
+                    <h5 class="text-center">Disk Kapasitesi</h5>
+                    <hr>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="128-256" name="Disk0">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            128-256 GB
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="256-512" name="Disk1">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            256-512 GB
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="512-1024" name="Disk2">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            512-1024 GB
+                        </label>
+                    </li>
+                        <br />
+                    <h5 class="text-center">Ekran Boyutu</h5>
+                    <hr>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="13.6-15.6" name="E13">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            13.6-15.6 inç
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="15.6-17.3" name="E15">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            15.6-17.3 inç
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                            <input class="form-check-input" type="checkbox" value="17.3" name="E17">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            17.3 inç
+                        </label>
+                    </li>
+                        <br />
+                    <h5 class="text-center">Ekran Kartı</h5>
+                    <hr>
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="AMD" name="AmdS">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            AMD
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="Intel" name="IntelS">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Intel
+                        </label>
+                    </li>
+                    <li class="nav-item text-center">
+                        <input class="form-check-input" type="checkbox" value="Nvidia" name="NvidiaS">
+                        <label class="form-check-label " for="flexCheckDefault">
+                            Nvidia
+                        </label>
+                    </li>
+                    <br />
+                    <li class="text-center">
+                    <button class="btn btn-outline-success" type="submit" name="submitButton" value="Submit">Submit</button>
+
+                    </li>
+
+                </ul>
+                </form>
+            </div>
+            <div class="flexbox-item box-2" style="width:1500px;">
+                <ul class="nav nav-pills flex-column mb-auto">
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+
+
+                                        <img src="@item.Resim" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h2>@item.Marka</h2>
+                                            <a class="card-title" href='@Url.Action("Index", "Detail", new { baslik = item.Baslik })'>@item.Baslik </a>
+                                            <!-- CSS only   <a class="card-title" asp-area="" asp-controller="Detail" asp-action="Index">@item.Baslik</a>-->
+                                            <p class="card-text" style="color:limegreen" :">@item.Fiyat TL</p>
+
+                                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                                <div class="btn-group me-2" role="group" aria-label="First group">
+                                                    @{
+                                                        if(item.Url.Contains("trendyol")){
+                                                            <a type="button" href="@item.Url" class="btn active" style="color:orange">Trendyol</a>
+                                                        }
+                                                        else{
+                                                            <a type="button" href="#" class="btn active" style="color:orange">Trendyol</a>
+                                                        }
+                                                    }
+                                                  
+
+                                                </div>
+                                                <div class="btn-group me-2" role="group" aria-label="Second group">
+                                                    @{
+                                                        if (item.Url.Contains("n11"))
+                                                        {
+                                                            <a type="button" href="@item.Url" class="btn active" style="color:red">n11</a>
+                                                           
+                                                        }
+                                                        else
+                                                        {
+                                                            <a type="button" href="#" class="btn active" style="color:red">n11</a>
+                                                            
+                                                        }
+                                                    }
+                                                   
+
+                                                </div>
+                                                <div class="btn-group" role="group" aria-label="Third group">
+                                                    @{
+                                                        if (item.Url.Contains("vatan"))
+                                                        {
+                                                             <a type="button" href="@item.Url" class="btn active" style="color:blue">Vatan</a>
+                                                           
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <a type="button" href="#" class="btn active" style="color:blue">Vatan</a>
+
+                                                        }
+                                                    }
+                                                   
+                                                </div>
+                                                     <div class="btn-group" role="group" aria-label="Fourth group">
+                                                    @{
+                                                        if (item.Url.Contains("mediamarkt"))
+                                                        {
+                                                            <a type="button" href="@item.Url" class="btn active" style="color: deeppink">Media Markt</a>
+                                                           
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <a type="button" href="#" class="btn active" style="color: deeppink">Media Markt</a>
+
+                                                        }
+                                                    }
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                }
+                        </li>
+                    }
 
 
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 
-</html>
+    </html>
+}

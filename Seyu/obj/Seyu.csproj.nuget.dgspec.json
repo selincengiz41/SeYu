@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[1.2.1, )"
             },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.17.1, )"
